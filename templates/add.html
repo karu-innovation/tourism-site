@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container mt-5">
+  
+  {% if message %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Good !</strong> {{message}}.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
+      <form action="" method="POST" class="card mx-auto p-2 border shadow " >
+      <div class="m-2 ">
+        <label for="" class="form-label">name</label>
+        <input type="text" class="form-control" required="true" id="" name="name">
+      </div>
+      <div class="m-2 ">
+        <label for="" class="form-label">location</label>
+        <input type="text" class="form-control" required="true" id="" name="location">
+      </div>
+      <div class="m-2 ">
+        <label for="" class="form-label">site</label>
+        <input type="text" class="form-control" id="" required="true" name="site">
+      </div>
+        
+        <div class="m-2">
+          <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+          <textarea class="form-control" required="true" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+          <div class="m-2 ">
+            <label for="" class="form-label">price</label>
+            <input type="text" class="form-control" required="true" id="" name="price">
+          </div>
+         
+            <button type="submit" class="btn btn-dark pl-5 pr-5 btn-lg rounded-pill mx-auto mt-3 mb-3 ">  SUBMIT  </button>
+          
+      </form>
+
+</div>
+
+{% endblock %}

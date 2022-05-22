@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="w-100   d-flex flex-column justify-content-center align-items-center bg-dark" style="min-height: 50vh;">
+
+    <h2 class="text text-light mb-4">{{site.name}}</h2>
+    <br>
+    <p class="text-light m-2 p-4"> {{site.description}}</p>
+
+</div>
+<h2 class="text text-center text-dark m-3" > Hotels Around</h2>
+
+<div class="container row row-cols-1 row-cols-md-3 g-4">
+    {% for hotel in hotels %}
+    <div class="col mx-auto" style="max-width: 350px;">
+      <div class="card h-100">
+        <img src="../static/images/hotel1.jpeg" class=" card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{hotel.name}}</h5>
+          <p class="card-text">{{hotel.description}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{hotel.location}}</small>
+          <small class="text-warning text-bold float-end">KSh.{{hotel.price}}</small>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+<h2 class="text text-center text-dark m-3" > Travel Agencies Around</h2>
+
+<div class="container row row-cols-1 row-cols-md-3 g-4">
+    {% for travel in travels %}
+    <div class="col mx-auto" style="max-width: 350px;">
+      <div class="card h-100">
+        <img src="../static/images/travel.jpeg" class=" card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{travel.name}}</h5>
+          <p class="card-text">{{travel.description}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{travel.location}}</small>
+          <small class="text-warning text-bold float-end">KSh.{{travel.price}}</small>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
